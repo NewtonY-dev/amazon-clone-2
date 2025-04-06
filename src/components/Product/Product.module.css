@@ -38,7 +38,7 @@
   padding: 10px 0;
 }
 .price {
-  padding: 30px 0;
+  padding-bottom: 30px;
 }
 .products_container {
   display: grid;
