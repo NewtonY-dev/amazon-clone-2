@@ -4,6 +4,9 @@
   gap: 20px;
   margin-top: 20px;
 }
+.container div:not(.subtotal) {
+  height: auto !important;
+}
 .container img {
   width: 150px !important;
 }
