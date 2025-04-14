@@ -1,8 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Routing from "./Router";
+import { DataContext } from "./components/DataProvider/DataProvider";
+import { Type } from "./Utility/action.type";
+import { auth } from "./Utility/firebase";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [{ user }, dispatch] = useContext(DataContext);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch({
+          type: Type.SET_USER,
+          user: authUser,
+        });
+      } else {
+        dispatch({
+          type: Type.SET_USER,
+          user: null,
+        });
+      }
+    });
+  }, []);
 
   return <Routing />;
 }
