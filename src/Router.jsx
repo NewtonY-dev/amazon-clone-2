@@ -12,7 +12,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 function Routing() {
   const stripePromise = loadStripe(
-    "pk_test_51RE2D1DB0ZyL5D50a3JeYrF0GLdy51KBfNe8KuBfXAOwdf4TrcXsfBQJ0U021aRdPsTTZoblxKRrw5PitR7wTH0C00dZjVP4nY"
+    "pk_test_51RE2gy0636i00ZvyxClhUDbNBuWaZulaMKIw9glHJ1Cr6kxSn4QAszvXXb94vEVya7GijKaBv6QnLnBna8s9yoCC00CBac4u0q"
   );
 
   return (
