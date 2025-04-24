@@ -9,9 +9,10 @@ import { axiosInstance } from "../../components/API/axios";
 import { ClipLoader } from "react-spinners";
 import { db } from "../../Utility/firebase";
 import { useNavigate } from "react-router-dom";
+import { Type } from "../../Utility/action.type";
 
 function Payment() {
-  const [{ user, basket }] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
@@ -65,6 +66,8 @@ function Payment() {
           created: paymentIntent.created,
         });
 
+      // empty the basket
+      dispatch({ type: Type.EMPTY_BASKET });
       setProcessing(false);
       navigate("/orders", { state: { msg: "You have placed new order" } });
     } catch (error) {
@@ -84,8 +87,8 @@ function Payment() {
           <h3>Delivery Address</h3>
           <div>
             <div>{user?.email}</div>
-            <div>123 React Lane</div>
-            <div>Chicago, IL</div>
+            <div>456 Broadway</div>
+            <div>New York, NY</div>
           </div>
         </div>
         <hr />
