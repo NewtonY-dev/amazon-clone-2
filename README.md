@@ -4,6 +4,11 @@
 
 This project is a clone of the Amazon e-commerce platform, built using React and Firebase. It includes features for user authentication, product display, shopping cart management, and payment processing.
 
+## Live Demo
+
+You can view the live deployed version of this project here:
+[https://amazon-clone-newtony.netlify.app/](https://amazon-clone-newtony.netlify.app/)
+
 ## Features
 
 * User authentication (Sign In and Sign Up)
